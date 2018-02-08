@@ -1,4 +1,4 @@
-# appium环境搭建
+# Mac系统下appium环境搭建
 
 前期准备：
 
