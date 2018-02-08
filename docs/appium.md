@@ -74,7 +74,7 @@ export PATH=$PATH:${JAVA_HOME}/bin
 
 解决 `$ANDROID_HOME` 一系列问题：
 
-** 安装 android-sdk **
+<strong>安装 android-sdk</strong>
 
 使用brew安装：
 
