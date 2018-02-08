@@ -59,7 +59,7 @@ $ brew install carthage
     <img width="400px" src="../screenshot/path.png">
 </p>
 
-解决 `JAVA_HOME is NOT set!` `Bin directory for $JAVA_HOME is not set` 问题：
+解决 `JAVA_HOME is NOT set!` `Bin directory for $JAVA_HOME is not set` 问题：
 
 ``` bash
 $ vi ~/.bash_profile
@@ -76,12 +76,12 @@ export PATH=$PATH:${JAVA_HOME}/bin
 
 ** 安装 android-sdk **
 
-使用brew安装：
+使用brew安装：
 
 ``` bash
 $ brew cask install android-sdk
 $ brew cask install android-platform-tools
-$ /usr/local/Caskroom/android-sdk/3859397/tools/android update sdk --use-sdk-wrapper # 3859397 是安装的android-sdk的版本
+$ /usr/local/Caskroom/android-sdk/3859397/tools/android update sdk --use-sdk-wrapper # 3859397 是安装的 android-sdk 的版本
 ```
 
 检测是否安装成功：
