@@ -30,13 +30,13 @@ $ npm install -g appium-doctor
 安装完成之后，执行 `appium-doctor` 检查 appium 环境，如下：
 
 <p align="left">
-    <img width="600px" src="https://github.com/HuJiaoHJ/blog/blob/master/screenshot/appium/appium-doctor.png">
+    <img width="600px" src="../screenshot/appium/appium-doctor.png">
 </p>
 
 可以看到，当前环境还没有完全搭建完成，常见问题解决：
 
 <p align="left">
-    <img width="400px" src="https://github.com/HuJiaoHJ/blog/blob/master/screenshot/appium/xcode-command-line.png">
+    <img width="400px" src="../screenshot/appium/xcode-command-line.png">
 </p>
 
 解决：
@@ -46,7 +46,7 @@ $ xcode-select --install # 按照提示安装即可
 ```
 
 <p align="left">
-    <img width="400px" src="https://github.com/HuJiaoHJ/blog/blob/master/screenshot/appium/carthage.png">
+    <img width="400px" src="../screenshot/appium/carthage.png">
 </p>
 
 解决：
@@ -56,7 +56,7 @@ $ brew install carthage
 ```
 
 <p align="left">
-    <img width="400px" src="https://github.com/HuJiaoHJ/blog/blob/master/screenshot/appium/path.png">
+    <img width="400px" src="../screenshot/appium/path.png">
 </p>
 
 解决 `JAVA_HOME is NOT set!` `Bin directory for $JAVA_HOME is not set` 问题：
@@ -116,7 +116,7 @@ $ source ~/.bash_profile
 再次执行 `appium-doctor` 检查 appium 环境，如下：
 
 <p align="left">
-    <img width="600px" src="https://github.com/HuJiaoHJ/blog/blob/master/screenshot/appium/appium-doctor-ok.png">
+    <img width="600px" src="../screenshot/appium/appium-doctor-ok.png">
 </p>
 
 以上，appium 环境就搭建完成~
