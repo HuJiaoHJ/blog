@@ -154,3 +154,5 @@ $ npm run sample # 运行测试用例
 </p>
 
 以上就是使用wd编写简单Appium测试用例的过程了~
+
+完整代码：https://github.com/HuJiaoHJ/appium-wd-example
