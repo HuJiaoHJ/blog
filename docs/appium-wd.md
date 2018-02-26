@@ -39,6 +39,27 @@ $ npm install colors
 
 Android机（安装了微信）、数据线（将手机通过数据线与电脑连接）
 
+#### 获取设备信息
+
+##### deviceName
+
+``` bash
+$ adb devices
+# List of devices attached
+# U2TDU15904014013	device
+```
+
+##### appPackage & appActivity
+
+在测试机上，打开微信，执行以下脚本：
+
+``` bash
+$ adb shell dumpsys window windows | grep mFocusedApp
+# mFocusedApp=AppWindowToken{1c6b43b3 token=Token{49ad22 ActivityRecord{35092aed u0 com.tencent.mm/.ui.LauncherUI t224}}}
+```
+
+从输出可以获取到 appPackage: "com.tencent.mm"; appActivity: ".ui.LauncherUI"
+
 #### 写代码
 
 **sample.js**
