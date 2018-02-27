@@ -150,3 +150,13 @@ $ npm run weapp # 运行测试用例
 以上就是使用 Appium 进行微信小程序自动化测试~
 
 完整代码：https://github.com/HuJiaoHJ/appium-wd-example
+
+#### 经过一系列的实践之后，发现使用 Appium 进行微信小程序自动化测试依旧还存在以下几个问题：
+
+1、微信在6.5.23版本之后在使用 `driver.context(WEBVIEW_com.tencent.mm:appbrand0)` 时，获取的 https://servicewechat.com/{appid}/{version}/page-frame.html 中body为空，而页面内容都包含在 https://servicewechat.com/preload/page-frame.html ，而在切换时，随机获取两个html中一个，所以会存在获取到空内容的情况。（原因暂时未找到，微信社区问题：https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=1707682624&docid=a85a5892193727a1954ccf55198c77d2&comment_lvl=1）所以，大概在17年12月更新的版本之后，还是不要再考虑使用 Appium 进行微信小程序的自动化测试了，网上很多教程都是在12月之前的，所以能走通整个流程，但是现在是存在问题的
+
+2、在小程序内部进行页面跳转之后，webview之间的相互切换暂时是存在问题的，原因还是上面提到的两个html的原因，暂时没有找到解决办法。（社区问题：https://testerhome.com/topics/7769）
+
+欢迎找到解决办法的小伙伴分享一下~~~
+
+写在最后：从调研到得出最终结论，花了差不多一周的时间，中间还经历了一个春节。虽然最后此方案没能用在实际开发中，有点遗憾，不过整个过程还是收获不少~~~
