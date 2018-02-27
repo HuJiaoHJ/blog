@@ -60,6 +60,8 @@ $ adb shell dumpsys window windows | grep mFocusedApp
 
 从输出可以获取到 appPackage: "com.tencent.mm"; appActivity: ".ui.LauncherUI"
 
+配置：[Appium Desired Capabilities](https://appium.io/docs/en/writing-running-appium/caps/)
+
 #### 写代码
 
 **sample.js**
@@ -174,6 +176,8 @@ $ npm run sample # 运行测试用例
     <img width="600px" src="../screenshot/appium-wd.png">
 </p>
 
-以上就是使用wd编写简单Appium测试用例的过程了~
+以上就是使用 wd 编写简单 Appium 测试用例的过程了~
+
+使用 wd 编写复杂测试用例，参考：[使用 Appium 进行微信小程序自动化测试](https://github.com/HuJiaoHJ/blog/issues/5)
 
 完整代码：https://github.com/HuJiaoHJ/appium-wd-example
