@@ -57,7 +57,7 @@ const serverConfig = {
     port: 4723
 };
 
-describe("sample test", function () {
+describe("weapp test", function () {
     this.timeout(300000);
 
     let driver;
@@ -143,7 +143,9 @@ $ npm run weapp # 运行测试用例
 
 执行结果如下：
 
-
+<p align="left">
+    <img width="600px" src="../screenshot/appium-weapp.png">
+</p>
 
 以上就是使用 Appium 进行微信小程序自动化测试~
 
