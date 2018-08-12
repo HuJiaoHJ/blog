@@ -758,3 +758,7 @@ function commitAllHostEffects() {
 <p align="left">
     <img width="700px" src="https://user-images.githubusercontent.com/11912260/43999504-f86d474e-9e3f-11e8-9748-e018a38b78af.png">
 </p>
+
+## 写在最后
+
+看源码过程是难熬的，但是看完之后收获确实很多，希望能对有需要的小伙伴有帮助~~~
