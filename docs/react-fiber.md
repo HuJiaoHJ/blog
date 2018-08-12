@@ -32,7 +32,7 @@ React定位是一个构建用户界面的JavaScript类库，使用JavaScript开�
 * Reconciliation 模块（又叫 协调模块，这个模块是上面两个模块的基础，也是本文分享的重点，主要负责任务协调、生命周期函数管理等）
 
 <p align="left">
-    <img width="700px" src="../screenshot/react_compose.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/43999406-6244fbd2-9e3e-11e8-8eb2-79cd866d2d22.png">
 </p>
 
 在开始 Reconciliation 模块之前，先简单介绍各个模块：
@@ -77,7 +77,7 @@ const React = {
 大家都知道，JSX语法会被babel编译成调用 React.creatElement 方法，如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/react_jsx.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999417-a73d58e2-9e3e-11e8-8136-edfca55bb99c.png">
 </p>
 
 而 React.creatElement 最终返回的是 React Element，数据结构如下：
@@ -96,7 +96,7 @@ const React = {
 可以在页面中把 <App/> 打印出来看下，如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/react_ele.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999423-bfa95a70-9e3e-11e8-92b0-8908119021ec.png">
 </p>
 
 #### 2、React.component
@@ -179,7 +179,7 @@ React Fiber调度算法又叫 Fiber Reconciler，是 React 16 启用的一种新
 React 16版本之前使用的 Stack Reconciler 调度算法，它通过递归的形式遍历 Virtual DOM，存在难以中断和恢复的问题，如果react更新任务运行时间过长，就会阻塞布局、动画等的运行，可能导致掉帧。它的调用栈如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/stack_reconciler.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999431-d5f1cdc6-9e3e-11e8-8949-dfcef5841929.png">
 </p>
 
 #### Fiber Reconciler
@@ -195,7 +195,7 @@ React 16版本之前使用的 Stack Reconciler 调度算法，它通过递归的
 它的调用栈如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/fiber_reconciler.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999436-e69cc270-9e3e-11e8-979c-a4ff6dfded46.png">
 </p>
 
 关于React新老调度算法的对比，大家可以看看：[https://zhuanlan.zhihu.com/p/37095662](https://zhuanlan.zhihu.com/p/37095662)
@@ -261,7 +261,7 @@ export type Fiber = {|
 Fiber树结构图（链表结构）如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/fiber.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999442-fb4b2c5c-9e3e-11e8-8d1b-ae3a35e2195d.png">
 </p>
 
 ### 源码函数调用流程
@@ -269,7 +269,7 @@ Fiber树结构图（链表结构）如下：
 我们看张图：
 
 <p align="left">
-    <img width="700px" src="../screenshot/reconciler_render.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/43999446-108f8b4e-9e3f-11e8-88ab-5c918aa050a3.png">
 </p>
 
 React组件渲染分为两个阶段：reconciler、render。从图上可以看到：
@@ -298,7 +298,7 @@ Reconciliation模块的工作可以分为两部分：
 我们以 ReactDOM.render() 方法为入口，来看看reconciliation阶段的函数调用流程：
 
 <p align="left">
-    <img width="100%" src="../screenshot/reconciliation.png">
+    <img width="100%" src="https://user-images.githubusercontent.com/11912260/43999452-2a2ea3aa-9e3f-11e8-9ae1-9cc9e2ad27f8.png">
 </p>
 
 从图中可以看到，我把此阶段分为三部分，分别以红线划分。简单的概括下三部分的工作：
@@ -316,7 +316,7 @@ Reconciliation模块的工作可以分为两部分：
 三部曲：scheduleWork、requestWork、performWork（安排工作、申请工作、正式工作）
 
 <p align="left">
-    <img width="400px" src="../screenshot/sync_async.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999458-3f3c7ace-9e3f-11e8-876c-09682b2ae530.png">
 </p>
 
 在三部曲中的 requestWork函数中，会判断当前任务是同步还是异步（暂时React的异步调用功能还在开发中，未开放使用，本文后续内容是以同步任务为例），然后通过不同的方式调用任务。同步任务直接调用performWork函数立即执行，而异步任务则会在后面的某一时刻被执行，那么异步任务是怎么被调度的呢？
@@ -404,7 +404,7 @@ function beginWork(
 首先，先介绍一下React Fiber架构的双缓冲技术：
 
 <p align="left">
-    <img width="500px" src="../screenshot/alternate.png">
+    <img width="500px" src="https://user-images.githubusercontent.com/11912260/43999463-55fb3f20-9e3f-11e8-83e4-8c891ec74941.png">
 </p>
 
 从上图可以看到有两颗 Fiber Tree：current、workInProgress，它们之间是通过每个Fiber节点上的alternate属性联系在一起，可以查看源码ReactFiber.js中的 createWorkInProgress 方法，如下：
@@ -444,7 +444,7 @@ export function createWorkInProgress(
 流程图如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/updateClassComponent.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999481-88b71114-9e3f-11e8-8ee9-4da7c3478741.png">
 </p>
 
 current为null，意味着当前的update是组件第一次渲染
@@ -462,7 +462,7 @@ current不为null，调用 updateClassInstance 方法
 最后调用 finishClassComponent 方法，那么 finishClassComponent函数 中做了什么呢？流程图如下：
 
 <p align="left">
-    <img width="400px" src="../screenshot/finishClassComponent.png">
+    <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999486-a3efe7da-9e3f-11e8-8049-054ad4f80214.png">
 </p>
 
 如果 shouldUpdate 为false，表示不需要更新，直接返回
@@ -610,7 +610,7 @@ function deleteChild(returnFiber: Fiber, childToDelete: Fiber): void {
 函数调用流程图如下：
 
 <p align="left">
-    <img width="100%" src="../screenshot/commit.png">
+    <img width="100%" src="https://user-images.githubusercontent.com/11912260/43999491-c5f9ea38-9e3f-11e8-999d-7dc26cc72f15.png">
 </p>
 
 commit阶段做的事情是拿到reconciliation阶段产出的EffectList，即所有更新工作，提交这些更新工作并调用渲染模块（react-dom）渲染UI。
@@ -739,7 +739,7 @@ function commitAllHostEffects() {
 至此，我们源码等的全过程也完成了，我们再总结一下整个流程：
 
 <p align="left">
-    <img width="700px" src="../screenshot/react_all_methods.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/43999497-df705272-9e3f-11e8-97ba-640deaeb8b33.png">
 </p>
 
 ## 总结
@@ -754,5 +754,5 @@ function commitAllHostEffects() {
 附上，生命周期函数汇总表：
 
 <p align="left">
-    <img width="700px" src="../screenshot/reactLifeCycle.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/43999504-f86d474e-9e3f-11e8-9748-e018a38b78af.png">
 </p>
