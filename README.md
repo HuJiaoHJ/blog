@@ -1,7 +1,5 @@
 # 个人博客
 
-ღ( ´･ᴗ･` ) 我的个人博客，喜欢的小伙伴给我 ⭐️
-
 欢迎关注 [我的掘金](https://juejin.im/user/56dfa4391532bc00515e13d9)、[我的知乎](https://www.zhihu.com/people/hu-jiao-36-21/posts)
 
 ## 目录
