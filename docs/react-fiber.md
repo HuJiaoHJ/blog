@@ -13,7 +13,7 @@ React源码分析内容非常多，本文专注在以下两个问题：
 
 React定位是一个构建用户界面的JavaScript类库，使用JavaScript开发UI组件，支持多种方式渲染组件，输出用户界面。
 
-而现在React最流行的是三种应用：
+React常见的三种应用类型：
 
 * React Web 应用
 * React Native 应用
@@ -93,7 +93,7 @@ const React = {
 }
 ```
 
-可以在页面中把 <App/> 打印出来看下，如下：
+可以在页面中把 `<App/>` 打印出来，如下：
 
 <p align="left">
     <img width="400px" src="https://user-images.githubusercontent.com/11912260/43999423-bfa95a70-9e3e-11e8-92b0-8908119021ec.png">
@@ -141,7 +141,7 @@ const classComponentUpdater = {
 
 可以知道，组件中调用 setState 其实是调用的 classComponentUpdater.enqueueSetState 方法，这里就是开始 setState 的入口
 
-至此，就简单的介绍了React基础模块，下面以开始介绍渲染模块：react-dom
+至此，就简单的介绍了React基础模块，下面开始介绍渲染模块：react-dom
 
 ### 渲染模块：react-dom
 
@@ -283,7 +283,7 @@ Reconciliation模块的工作可以分为两部分：
 
 1、reconciliation
 
-简单来说就是找到需要更新的工作，通过 Diff Fiber Tree 找出要做的更新工作，这是一个js计算过程，计算结果可以被缓存，计算过程被打断，也可以恢复执行
+简单来说就是找到需要更新的工作，通过 Diff Fiber Tree 找出要做的更新工作，这是一个js计算过程，计算结果可以被缓存，计算过程可以被打断，也可以恢复执行
 
 所以，上面介绍 Fiber Reconciler 调度算法时，有提到新算法具有可拆分、可中断任务的新特性，就是因为这部分的工作是一个纯js计算过程，所以是可以被缓存、被打断和恢复的
 
@@ -309,6 +309,8 @@ Reconciliation模块的工作可以分为两部分：
 
 3、第三部分是一个大循环，遍历所有的Fiber节点，通过Diff算法计算所有更新工作，产出 **EffectList** 给到commit阶段使用。这部分的核心是 beginWork 函数。
 
+##### 第一部分
+
 第一部分较为简单，这里就不详细介绍了，小伙伴们可自行阅读源码~
 
 ##### 第二部分：任务协调
@@ -333,7 +335,7 @@ Reconciliation模块的工作可以分为两部分：
 
 后续会以同步任务为例，所以我们开始介绍第三部分的核心函数：beginWork
 
-##### beginWork
+##### 第三部分：beginWork
 
 从上面的函数调用流程图可以看到，beginWork在大循环中被调用，返回当前节点的子节点。
 
@@ -736,7 +738,7 @@ function commitAllHostEffects() {
 
 以上就是commit阶段的全过程
 
-至此，我们源码等的全过程也完成了，我们再总结一下整个流程：
+至此，我们源码等的全过程也完成了，我们再总结一下整个函数调用流程：
 
 <p align="left">
     <img width="700px" src="https://user-images.githubusercontent.com/11912260/43999497-df705272-9e3f-11e8-97ba-640deaeb8b33.png">
