@@ -731,6 +731,8 @@ class Text extends Component<*> {
 
 举的这个例子比较简单，想表达的是我们通过看react-native-web源码，在开发过程中，遇到了转换web的问题，我们可以通过修改源码、或者使用它提供的API来解决
 
+具体代码可以参考示例项目：[rn_web](https://github.com/HuJiaoHJ/rn_web)，包括源码注释和实例代码
+
 ## 写在最后
 
 以上就是我对 react-native-web 源码的分享，希望能对有需要的小伙伴有帮助~~~
