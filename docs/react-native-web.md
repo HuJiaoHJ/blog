@@ -626,7 +626,7 @@ _injectRegisteredStyle(id) {
 其中，`styleSheetManager.injectDeclaration` 是基于 `domStyleElement.sheet` 对页面样式进行插入操作，我们可以看看转出来的web页面的样式：
 
 <p align="left">
-    <img src="../screenshot/rnweb_sheet.png">
+    <img src="https://user-images.githubusercontent.com/11912260/44307406-9865c200-a3d4-11e8-95dd-c348aa8cb60f.png">
 </p>
 
 #### _resolveStyleIfNeeded
