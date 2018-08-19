@@ -1,6 +1,6 @@
-# react native 转 web 方案：react-native-web
+# react native转web方案：react-native-web
 
-本文将从三个方面分享react native 转 web 方案：react-native-web
+本文将从三个方面分享 react native 转 web 方案：react-native-web
 
 * react-native-web 的使用
 * react-native-web 源码分析
@@ -730,3 +730,7 @@ class Text extends Component<*> {
 ```
 
 举的这个例子比较简单，想表达的是我们通过看react-native-web源码，在开发过程中，遇到了转换web的问题，我们可以通过修改源码、或者使用它提供的API来解决
+
+## 写在最后
+
+以上就是我对 react-native-web 源码的分享，希望能对有需要的小伙伴有帮助~~~
