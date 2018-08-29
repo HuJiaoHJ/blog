@@ -4,13 +4,15 @@
 
 此方案存在一个问题：强依赖客户端打包，即每新增图标，就需要客户端重新打包，资源管理上不能做到 RN 与客户端解耦
 
-为了避免这个问题，使用了SVG方案：[react-native-svg](https://github.com/react-native-community/react-native-svg)，接下来将以四个方面进行分享：
+为了避免这个问题，使用了SVG方案：[react-native-svg](https://github.com/react-native-community/react-native-svg) 来实现Icon
+
+接下来将从三个方面进行分享：
 
 * react-native-svg 使用
 * Icon组件实现及2Web
 * Icon组件使用
 
-此文会涉及部分 React Native 转 web 的知识，使用的 react-native-web 方案，可以看看我之前写的文章：[react native转web方案：react-native-web](https://github.com/HuJiaoHJ/blog/issues/9)
+此文会涉及部分 React Native 转 web 的知识，使用的是 react-native-web 方案，可以看看我之前写的文章：[react native转web方案：react-native-web](https://github.com/HuJiaoHJ/blog/issues/9)
 
 ## react-native-svg 使用
 
@@ -123,7 +125,7 @@ web端我们使用iconfont来做Icon组件（注意：iconfont不支持多色ico
 
 上面的转换工具可以参考：[svg2iconfont](https://www.npmjs.com/package/web-svg2iconfont)，代码：[https://github.com/HuJiaoHJ/svg2iconfont](https://github.com/HuJiaoHJ/svg2iconfont)
 
-当然，要注意记得将生成的iconfont.css文件引入页面html中，接下看看2web的Icon组件实现，不需要额外新建文件夹，只需在相同文件夹下新增 `creact-icon-set.js` 文件（注意到上面RN的文件是 `creact-icon-set.native.js`），这在实际使用过程中，会自动识别这两个文件的
+当然，要注意记得将生成的iconfont.css文件引入页面html中，接下来看看2web的Icon组件实现，不需要额外新建文件夹，只需在相同文件夹下新增 `creact-icon-set.js` 文件（注意到上面RN的文件是 `creact-icon-set.native.js`），这在实际使用过程中，会自动识别这两个文件
 
 **creact-icon-set.js**
 
@@ -206,3 +208,13 @@ export default function () {
   ))
 }
 ```
+
+以上所有代码可在个人开发的RN组件库的项目中查看到：[rn_components](https://github.com/HuJiaoHJ/rn_components)，组件库现在才开始建设，后续会不断完善
+
+## 写在最后
+
+以上就是我对 React Native Icon方案：react-native-svg 的分享，希望能对有需要的小伙伴有帮助~~~
+
+喜欢我的文章的小伙伴可以点star ⭐️
+
+欢迎关注 [我的掘金](https://juejin.im/user/56dfa4391532bc00515e13d9/posts)、[我的知乎](https://www.zhihu.com/people/hu-jiao-36-21/posts)
