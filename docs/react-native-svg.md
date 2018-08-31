@@ -209,7 +209,7 @@ export default function () {
 }
 ```
 
-以上所有代码可在个人开发的RN组件库的项目中查看到：[rn_components](https://github.com/HuJiaoHJ/rn_components)，组件库现在才开始建设，后续会不断完善
+以上所有代码可在个人开发的RN组件库的项目中查看到：[rn_components](https://github.com/HuJiaoHJ/rn_components)，组件库现在才刚开始建设，后续会不断完善
 
 ## 写在最后
 
