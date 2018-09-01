@@ -116,7 +116,7 @@ web端我们使用iconfont来做Icon组件（注意：iconfont不支持多色ico
 还是svg文件转换的问题，我们需要先将svg文件转换成iconfont，即
 
 <p align="left">
-    <img width="300px" src="../screenshot/iconfont.png">
+    <img width="300px" src="https://user-images.githubusercontent.com/11912260/44942540-19b25100-ade6-11e8-9018-bdf5f6ff5403.png">
 </p>
 
 这样我们就能向常规web一样使用iconfont啦
