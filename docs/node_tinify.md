@@ -6,7 +6,7 @@
 
 本文介绍的方法真的很简单快捷，使用的是 [https://tinypng.com/](https://tinypng.com/) 提供的Node API，文档：[https://tinypng.com/developers/reference/nodejs](https://tinypng.com/developers/reference/nodejs)
 
-在使用之前，需要去申请一个API Key，入口：[https://tinypng.com/developers](https://tinypng.com/developers)
+在使用之前，需要去申请一个API Key，入口：[https://tinypng.com/developers](https://tinypng.com/developers)，注意一个API Key一个月只能免费压缩500个图片，不过我觉得还是够用的
 
 具体使用方式可以参考官方文档，下面介绍如何批量的对图片进行压缩，直接上代码：
 
@@ -17,7 +17,7 @@ const tinify = require('tinify');
 const apiKey = require('./api_key');
 const fs = require('fs');
 const path = require('path');
-// API Key，注意一个API Key一个月只能免费压缩500个图片
+// API Key
 tinify.key = apiKey;
 
 // 执行图片压缩任务，返回promise对象
