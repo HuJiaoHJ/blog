@@ -86,7 +86,7 @@ import React, { Component } from 'react';
 import SvgUri from 'react-native-svg-uri';
 
 export default function createIconSet(svg, fontName) {
-    class Icon extends Component {
+    return class Icon extends Component {
         render () {
             const { icon, color, size, style } = this.props;
             let svgXmlData = svg[icon];
@@ -100,8 +100,6 @@ export default function createIconSet(svg, fontName) {
             );
         }
     };
-
-    return Icon;
 }
 ```
 
@@ -134,7 +132,7 @@ import React, { Component } from 'react'
 import { createElement, StyleSheet } from 'react-native'
 
 export default function createIconSet(svgs, fontName) {
-  class Icon extends Component {
+  return class Icon extends Component {
     render() {
       const { icon, color, size, style } = this.props
       const styles = StyleSheet.create({
@@ -153,7 +151,6 @@ export default function createIconSet(svgs, fontName) {
       return createElement('i', props)
     }
   }
-  return Icon
 }
 ```
 
