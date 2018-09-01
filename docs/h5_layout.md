@@ -28,13 +28,13 @@ vw 是基于视图(Viewport)的长度单位，而与Viewport相关四个单位�
 * vmax：当前 vw 和 vh 中较大值
 
 <p align="left">
-    <img width="700px" src="https://user-images.githubusercontent.com/11912260/43674909-3d75c958-980d-11e8-9f16-85e8e40b9202.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/44942376-e4a3ff80-ade1-11e8-9cb6-7bd57e0045c4.png">
 </p>
 
 常规的 rem 的适配方案（包括flexible），其实就是通过 js 动态计算，模拟 vw 的效果，过去使用这种方案主要原因是 vw 存在一定的兼容问题，不过对于现在而言，vw 也基本能满足对兼容性的要求
 
 <p align="left">
-    <img width="700px" src="https://user-images.githubusercontent.com/11912260/43674915-4c3ca9de-980d-11e8-9fe5-9a3fc85c8f65.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/44942379-ff767400-ade1-11e8-817d-d6a78250f3c5.png">
 </p>
 
 可以看到，Android 4.4 以上及 IOS 8.0 以上均已支持，所以现在我们可以直接使用 vw 来做移动端适配啦
@@ -318,7 +318,7 @@ $z-layers: (
 以上讲的布局，可以去 [DEMO页](https://hujiaohj.github.io/h5-layout/build/pages/vw_layout/index.html)看看，二维码：
 
 <p align="left">
-    <img width="300px" src="https://user-images.githubusercontent.com/11912260/43674919-5cd7936c-980d-11e8-8f51-c6dc2559ba74.png">
+    <img width="300px" src="https://user-images.githubusercontent.com/11912260/44942383-1b7a1580-ade2-11e8-95c2-492d0e618911.png">
 </p>
 
 代码：https://github.com/HuJiaoHJ/h5-layout
