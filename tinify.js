@@ -5,10 +5,11 @@ const path = require('path');
 
 tinify.key = apiKey;
 
-// const source = tinify.fromFile('./screenshot/fiber.png');
-// console.log(source);
-// source.toFile('fiber.png');
-// console.log(source);
+const task = file => {
+    const source = tinify.fromFile(file.fromFile);
+    source.toFile(file.toFile);
+    return source._url;
+}
 
 const fromDir = (inDir, outDir, _files = []) => {
     const files = fs.readdirSync(inDir);
@@ -32,9 +33,15 @@ const fromDir = (inDir, outDir, _files = []) => {
 }
 
 const rootDir = fs.realpathSync(process.cwd());
-const screenshotDir = path.resolve(rootDir, './screenshot');
-const screenshotOutDir = path.resolve(rootDir, './screenshotout');
+const screenshotDir = path.resolve(rootDir, './screenshotin');
+const screenshotOutDir = path.resolve(rootDir, './screenshot');
 
-// const files = fromDir(screenshotDir, screenshotOutDir);
+const files = fromDir(screenshotDir, screenshotOutDir);
 
-// console.log(files);
+if (files.length === 0) {
+    return;
+}
+let current = task(files[0]);
+for (let i = 1; i < files.length; i++) {
+    current = current.then(task(files[i]));
+}
