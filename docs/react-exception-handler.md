@@ -97,7 +97,7 @@ class ErrorBoundary extends React.Component {
 而各生命周期函数在各阶段的调用情况如下：
 
 <p align="left">
-    <img width="700px" src="https://user-images.githubusercontent.com/11912260/44942466-3e0d2e00-ade4-11e8-8f97-96c7b3450c9a.png">
+    <img width="700px" src="../screenShot/reactLifeCycle_new.png">
 </p>
 
 下面我们正式开始异常处理部分的源码分析，React异常处理在源码中的入口主要有两处：
@@ -277,6 +277,8 @@ function createClassErrorUpdate(
 
 可以看到，此函数返回一个update，此update的callback最终会调用组件的 `componentDidCatch`生命周期函数
 
+大家可能会好奇，update的callback最终会在什么时候被调用，update的callback最终会在commit阶段的 `commitAllLifeCycles`函数中被调用，这块在讲完dispatch之后会详细讲一下
+
 以上就是 reconciliation阶段 的异常捕获到异常处理的流程，可以知道此阶段是在`workLoop`大循环外套了层`try...catch...`，所以workLoop里所有的异常都能被异常边界组件捕获并处理
 
 下面我们看看 commit阶段 的 `dispatch`
@@ -434,6 +436,51 @@ function commitRoot(root: FiberRoot, finishedWork: Fiber): void {
 ```
 
 可以看到，有三处（也是commit阶段主要的三部分）通过`try...catch...`调用了 `captureCommitPhaseError`函数，即调用了 `dispatch`函数，而这三个部分具体做的事情注释里也写了，详细的感兴趣的小伙伴可以看看我的文章：[React16源码之React Fiber架构](https://github.com/HuJiaoHJ/blog/issues/7)
+
+刚刚我们提到，update的callback会在commit阶段的`commitAllLifeCycles`函数中被调用，我们来看下具体的调用流程：
+
+1、commitAllLifeCycles函数中会调用`commitLifeCycles`函数
+
+2、在commitLifeCycles函数中，对于ClassComponent和HostRoot会调用`commitUpdateQueue`函数
+
+3、我们来看看 commitUpdateQueue 函数源码：
+
+```JavaScript
+export function commitUpdateQueue<State>(
+  finishedWork: Fiber,
+  finishedQueue: UpdateQueue<State>,
+  instance: any,
+  renderExpirationTime: ExpirationTime,
+): void {
+  ...
+  // Commit the effects
+  commitUpdateEffects(finishedQueue.firstEffect, instance);
+  finishedQueue.firstEffect = finishedQueue.lastEffect = null;
+
+  commitUpdateEffects(finishedQueue.firstCapturedEffect, instance);
+  finishedQueue.firstCapturedEffect = finishedQueue.lastCapturedEffect = null;
+}
+
+function commitUpdateEffects<State>(
+  effect: Update<State> | null,
+  instance: any,
+): void {
+  while (effect !== null) {
+    const callback = effect.callback;
+    if (callback !== null) {
+      effect.callback = null;
+      callCallback(callback, instance);
+    }
+    effect = effect.nextEffect;
+  }
+}
+```
+
+我们可以看到，commitUpdateQueue函数中会调用两次`commitUpdateEffects`函数，参数分别是正常update队列以及存放异常处理update队列
+
+而commitUpdateEffects函数就是遍历所有update，调用其callback方法
+
+上文提到，commitAllLifeCycles函数中是用于调用剩余生命周期函数，所以异常边界组件的 `componentDidCatch`生命周期函数也是在这个阶段调用
 
 ### 总结
 
