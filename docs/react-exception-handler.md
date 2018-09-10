@@ -60,7 +60,7 @@ class ErrorBoundary extends React.Component {
 
 使用如下：
 
-```html
+```
 <ErrorBoundary>
   <MyWidget />
 </ErrorBoundary>
@@ -484,7 +484,7 @@ function commitUpdateEffects<State>(
 
 ### 总结
 
-我们现在可以知道，React内部其实也是通过 `try...catch...` 形式是捕获各阶段的异常，但是只在两个阶段的特定几处进行了异常捕获，这也是为什么异常边界只能捕获到子组件在构造函数、render函数以及所有生命周期函数中抛出异常
+我们现在可以知道，React内部其实也是通过 `try...catch...` 形式是捕获各阶段的异常，但是只在两个阶段的特定几处进行了异常捕获，这也是为什么异常边界只能捕获到子组件在构造函数、render函数以及所有生命周期函数中抛出的异常
 
 细心的小伙伴应该注意到，`throwException` 和 `dispatch` 在遍历节点时，是从异常节点的父节点开始遍历，这也是为什么异常边界组件自身的异常不会捕获并处理
 
