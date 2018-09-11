@@ -6,6 +6,8 @@
 
 ### 2018年9月
 
+#### [从源码看React异常处理](https://github.com/HuJiaoHJ/blog/issues/12)
+
 #### [【Node】简单快捷的图片压缩脚本](https://github.com/HuJiaoHJ/blog/issues/11)
 
 #### [React Native Icon方案：react-native-svg](https://github.com/HuJiaoHJ/blog/issues/10)
