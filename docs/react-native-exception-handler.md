@@ -1,14 +1,12 @@
-# React Native 异常处理
-
 React Native页面出现错误时：
 
 1、开发模式下，会出现红色背景的页面，展示当前代码错误信息，如下：
 
-![dev](../screenshot/rn_dev_error.gif)
+![rn_dev_error](https://user-images.githubusercontent.com/11912260/45582886-851e1780-b8ea-11e8-895b-9f9b304f362a.gif)
 
 2、bundle模式下，则会出现白屏或者闪退，如下：
 
-![bundle](../screenshot/rn_bundle_error.gif)
+![rn_bundle_error](https://user-images.githubusercontent.com/11912260/45582887-9bc46e80-b8ea-11e8-9524-e288648d0f9e.gif)
 
 在生产环境下，因RN页面异常导致整个APP白屏或者闪退，用户体验并不好，所以应该对异常进行捕获并处理，提高用户体验
 
@@ -16,7 +14,7 @@ React Native页面出现错误时：
 
 1、React Error Boundaries (异常边界组件)
 
-2、React Native ErrorUtils
+2、React Native ErrorUtils 模块
 
 ## React Error Boundaries (异常边界组件)
 
@@ -153,13 +151,13 @@ export default withErrorBoundary(ExceptionHandlerExample, (error, errorInfo) => 
 * Server side rendering（服务端渲染）
 * Errors thrown in the error boundary itself (rather than its children)（异常边界组件本身抛出的异常）
 
-所以需要使用 React Native ErrorUtils 对这些异常进行捕获并处理
+所以需要使用 React Native ErrorUtils 模块对这些异常进行捕获并处理
 
-## React Native ErrorUtils
+## React Native ErrorUtils 模块
 
 React Native ErrorUtils 是负责对RN页面中异常进行管理的模块，功能很类似Web页面中的 window.onerror
 
-首先我们看看怎么利用 React Native ErrorUtils 进行异步捕获和处理，直接看代码：
+首先我们看看怎么利用 React Native ErrorUtils 进行异步捕获和处理，直接上代码：
 
 ### error_guard.js
 
@@ -279,7 +277,7 @@ __guard(fn: () => void) {
 使用了`__guard`的地方这里就不一一列举了，我们可以看看 `MessageQueue` 这个模块在RN中处于什么位置
 
 <p align="left">
-    <img width="700px" src="../screenshot/rn_messagequeue.png">
+    <img width="700px" src="https://user-images.githubusercontent.com/11912260/45582938-826ff200-b8eb-11e8-952a-98b32ef1119f.png">
 </p>
 
 因为没有系统的看过RN的源码，在网上找了个介绍 Native 和 JS 之间通信的图，我们可以看到 `MessageQueue` 在 Native 和 JS 之间通信是很重要的模块
@@ -307,7 +305,7 @@ module.exports = BatchedBridge;
 
 所以在 `MessageQueue` 模块中使用 ErrorUtils 能捕获到所有通信过程中的异常并调用`_globalHandler`处理
 
-以上所有代码可在个人开发的RN组件库的项目中查看到：[rn_components](https://github.com/HuJiaoHJ/rn_components)，组件库现在才刚开始建设，后续会不断完善
+以上所有代码可在个人开发的RN组件库的项目中查看到：[rn_components ExceptionHandler](https://github.com/HuJiaoHJ/rn_components/blob/master/src/exception_handler/README.md)，组件库现在才刚开始建设，后续会不断完善
 
 ## 写在最后
 
