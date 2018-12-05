@@ -97,6 +97,8 @@ npm run lint
 
 ## JavaScrip静态类型检查 - flow
 
+文档：https://flow.org/
+
 ### 安装
 
 ```bash
