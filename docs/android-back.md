@@ -2,6 +2,8 @@
 
 移动端H5页面是监听不了Android物理返回键的点击事件，一般webview的默认行为是 `window.history.go(-1)` ，但是在实际需求场景下，简单的页面回退并不能满足需求，所以需要H5页面监听Android物理返回键从而自定义处理方法。
 
+本方案的代码都在 [h5_android_back](https://github.com/HuJiaoHJ/h5_android_back) 仓库中
+
 ## 原理
 
 主要是运用 HTML5 History API 实现。所以，首先简单介绍下 HTML5 History API
@@ -181,6 +183,8 @@ export default AndroidBack(App, () => {
 ```
 
 ### 写在最后
+
+> 注：此方案使用于所有浏览器及默认行为是页面回退的webview
 
 此方案在我平时工作中使用正常，希望能对有需要的小伙伴有帮助~~~
 
