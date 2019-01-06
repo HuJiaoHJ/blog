@@ -8,7 +8,7 @@ CocoaPods 是专门为iOS工程提供对第三方库的依赖的管理工具。
 
 ## ruby、rvm、gem、bundler是什么？
 
-ruby 是一种开源的面向对象程序设计的服务器端脚本语言。
+[ruby](https://www.ruby-lang.org/en/) 是一种开源的面向对象程序设计的服务器端脚本语言。
 
 [rvm](https://rvm.io/) 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。
 
@@ -32,7 +32,7 @@ $ rvm list
 $ rvm remove 2.5.0
 ```
 
-RubyGems 是 Ruby 的一个包管理器，它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具。RubyGems 旨在方便地管理 gem 安装的工具，以及用于分发 gem 的服务器。
+[RubyGems](https://rubygems.org/) 是 Ruby 的一个包管理器，它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具。RubyGems 旨在方便地管理 gem 安装的工具，以及用于分发 gem 的服务器。
 
 Gem 是 Ruby 模块 (叫做 Gems) 的包管理器。其包含包信息，以及用于安装的文件。其功能跟npm等包管理器类似。
 
@@ -64,7 +64,7 @@ $ gem sources --remove https://rubygems.org/
 $ gem sources -a https://gems.ruby-china.org/
 ```
 
-bundler 则是一个Gem包。相等于多个RubyGems批处理运行。在配置文件gemfile里声明应用依赖的第三方包，会自动下载安装多个包，并且会下载这些包依赖的包。
+[bundler](https://bundler.io/) 则是一个Gem包。相等于多个RubyGems批处理运行。在配置文件gemfile里声明应用依赖的第三方包，会自动下载安装多个包，并且会下载这些包依赖的包。
 
 ```bash
 # 使用gem安装bundler

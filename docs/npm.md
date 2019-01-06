@@ -224,7 +224,7 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 
 直接通过执行对应的`release_`命令来进行发布即可
 
-以上就是一个npm包通常会用到基本事项，下面分享点其他的点，后续会不断更新~
+以上就是一个npm包通常会用到基本事项，后续会不断更新一些进阶的用法~
 
 ## bin
 
