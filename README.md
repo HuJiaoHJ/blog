@@ -12,6 +12,10 @@
 
 #### [从源码看React.PureComponent](https://github.com/HuJiaoHJ/blog/issues/14)
 
+### iOS入门
+
+#### [iOS入门（一）使用CocoaPods做依赖管理](https://github.com/HuJiaoHJ/blog/issues/18)
+
 ### 实践总结
 
 #### [web移动端布局的那些事儿](https://github.com/HuJiaoHJ/blog/issues/6)
@@ -26,6 +30,8 @@
 
 #### [H5页面监听Android物理返回键](https://github.com/HuJiaoHJ/blog/issues/16)
 
+#### [如何搭建npm包](https://github.com/HuJiaoHJ/blog/issues/17)
+
 ### 工具开发
 
 #### [【Node】简单快捷的图片压缩脚本](https://github.com/HuJiaoHJ/blog/issues/11)
@@ -33,6 +39,11 @@
 #### [Chrome Devtools 开发之消息通信](https://github.com/HuJiaoHJ/blog/issues/4)
 
 ## 时间
+
+### 2019年1月
+
+#### [iOS入门（一）使用CocoaPods做依赖管理](https://github.com/HuJiaoHJ/blog/issues/18)
+#### [如何搭建npm包](https://github.com/HuJiaoHJ/blog/issues/17)
 
 ### 2018年12月
 
