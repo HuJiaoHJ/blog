@@ -226,10 +226,6 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 
 以上就是一个npm包通常会用到基本事项，后续会不断更新一些进阶的用法~
 
-## bin
-
-TODO
-
 ## 写在最后
 
 希望能对有需要的小伙伴有帮助~~~
